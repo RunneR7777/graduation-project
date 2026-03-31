@@ -1,0 +1,157 @@
+<template>
+    <v-app-bar class="white" app clipped-left elevation="2" height="75">
+        <v-list-item-avatar @click="goToPath('/')" tile size="80" class="ml-4 mr-4">
+            <img src="@/assets/images/fuxi_v3.svg" alt="logo"/>
+        </v-list-item-avatar>
+        <span @click="goToPath('/')" class="ml-4 headline	grey--text font-weight-medium	">园区网络IPv6安全风险评估系统</span>
+        <v-spacer />
+        <div>
+            <div >
+                <!-- <v-btn class="mr-4" icon @click="goToPath('/scanner/poc/new')">
+                    <v-icon>mdi-credit-card-scan-outline</v-icon>
+                </v-btn>
+                <v-btn class="mr-4" icon @click="goToPath('/discovery/port/new')">
+                    <v-icon>mdi-map-marker-path</v-icon>
+                </v-btn>
+                <v-btn class="mr-4" icon @click="goToPath('/scanner/sqlmap/tasks?task=new')">
+                    <v-icon>mdi-needle</v-icon>
+                </v-btn>
+                <v-btn class="mr-4" icon @click="goToPath('/discovery/subdomain/new')">
+                    <v-icon>mdi-web-box</v-icon>
+                </v-btn>
+                <v-btn class="mr-4" icon @click="goToPath('/discovery/whatweb')">
+                    <v-icon>mdi-fingerprint</v-icon>
+                </v-btn>
+                <v-btn class="mr-4" icon @click="goToPath('/exploit/xss/tasks')">
+                    <v-icon>mdi-anchor</v-icon>
+                </v-btn>
+                <v-btn class="mr-12" icon @click="goToPath('/exploit/http/result')">
+                    <v-icon>mdi-spider-web</v-icon>
+                </v-btn> -->
+
+<!--                <v-tooltip bottom>-->
+<!--                    <template v-slot:activator="{ on }">-->
+<!--                        <span @click="changeLanguage(language)" v-on="on" :class="'mr-4 ml-12 flag-icon flag-icon-' + language"/>-->
+<!--                    </template>-->
+<!--                    <span>Language(unfinished)</span>-->
+<!--                </v-tooltip>-->
+
+                <v-menu left offset-y>
+                    <template v-slot:activator="{ on }">
+                        <span v-on="on" :class="'mr-4 ml-12 flag-icon flag-icon-' + language"/>
+                    </template>
+
+                    <v-list>
+                        <div @click="language = 'us'">
+                            <span class="mr-4 ml-4 flag-icon flag-icon-us"/>
+                            <span class="mr-3 grey--text">English</span>
+                        </div>
+                    </v-list>
+                    <v-divider/>
+                    <v-list>
+                        <div @click="language = 'cn'">
+                            <span class="mr-4 ml-4 flag-icon flag-icon-cn"/>
+                            <span class="mr-3 grey--text">Unfinished</span>
+                        </div>
+                    </v-list>
+                </v-menu>
+
+                <v-menu>
+                    <template v-slot:activator="{ on }">
+                        <v-btn icon class="mr-1" v-on="on">
+                            <v-icon>mdi-cog-transfer-outline</v-icon>
+                        </v-btn>
+                    </template>
+                    <v-list>
+                        <v-list-item>
+                            <v-list-item-action>
+                                <v-icon>mdi-account-box</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <span>{{username}}</span>
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+
+                        <v-divider class="mb-3"/>
+
+                        <v-list-item @click="goToPath('/settings')">
+                            <v-list-item-action>
+                                <v-icon>mdi-cog-outline</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <span>设置</span>
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+
+                        <v-list-item>
+                            <v-list-item-action>
+                                <v-icon>mdi-book-search
+                                </v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                        <a
+                                                class="black--text"
+                                                href="https://github.com/jeffzh3ng/fuxi#issues"
+                                                target="_blank">
+                                            帮助与文档
+                                        </a>
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+
+                        <v-divider class="mt-1"/>
+
+                        <v-list-item class="mt-2" @click="logout">
+                            <v-list-item-action>
+                                <v-icon color="error">mdi-logout</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <span class="error--text">退出登录</span>
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+            </div>
+        </div>
+
+    </v-app-bar>
+</template>
+
+<script>
+    export default {
+        name: "TopToolbar",
+        data: () => ({
+            drawer: null,
+            username: "Administrator",
+            language: "us",
+        }),
+        mounted() {
+        },
+        methods: {
+            goToPath(path){
+                this.path = path;
+                this.$router.push(path);
+            },
+            logout() {
+                window.localStorage.removeItem('access_token');
+                this.$message.success("Logout successfully");
+                this.$router.push('/login');
+            },
+            changeLanguage(language) {
+                console.log(language);
+                console.log(this.$vuetify.lang.current = "zhHans");
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    a:link { text-decoration: none;}
+</style>

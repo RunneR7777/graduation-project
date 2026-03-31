@@ -1,0 +1,293 @@
+2025-10-03 18:44:21 - backend_v2 - INFO - 测试日志系统
+2025-10-03 18:45:50 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 18:45:50 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 18:45:50 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 18:45:50 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 18:45:50 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 18:45:50 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 18:45:50 - backend_v2 - INFO - 应用清理完成
+2025-10-03 18:46:43 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 18:46:43 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 18:46:43 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 18:46:43 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 18:46:43 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 18:46:43 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 18:46:43 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 18:46:43 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 18:46:43 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 18:46:43 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 18:46:43 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 18:46:43 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 18:46:47 - backend_v2 - INFO - 应用清理完成
+2025-10-03 18:52:02 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 18:52:02 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 18:52:02 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 18:52:02 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 18:52:02 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 18:52:02 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 18:52:03 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 18:52:03 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 18:52:03 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 18:52:03 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 18:52:03 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 18:52:03 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 18:53:07 - backend_v2 - ERROR - 数据库操作失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 10 ...
+                                            ^
+
+2025-10-03 18:53:07 - backend_v2 - ERROR - 查询执行失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 10 ...
+                                            ^
+
+2025-10-03 18:53:07 - backend_v2 - ERROR - 获取记录列表失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 10 ...
+                                            ^
+
+2025-10-03 18:53:07 - backend_v2 - ERROR - 获取流量列表失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 10 ...
+                                            ^
+
+2025-10-03 18:53:09 - backend_v2 - ERROR - 获取流量详情失败: invalid literal for int() with base 10: 'inbound'
+2025-10-03 18:53:10 - backend_v2 - ERROR - 获取流量详情失败: invalid literal for int() with base 10: 'outbound'
+2025-10-03 18:53:11 - backend_v2 - ERROR - 数据库操作失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 10 ...
+                                            ^
+
+2025-10-03 18:53:11 - backend_v2 - ERROR - 查询执行失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 10 ...
+                                            ^
+
+2025-10-03 18:53:11 - backend_v2 - ERROR - 获取记录列表失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 10 ...
+                                            ^
+
+2025-10-03 18:53:11 - backend_v2 - ERROR - 获取流量列表失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 10 ...
+                                            ^
+
+2025-10-03 19:01:31 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:01:31 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:01:31 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:01:31 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:01:31 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:01:31 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:01:31 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:01:42 - backend_v2 - ERROR - 数据库操作失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 5 O...
+                                            ^
+
+2025-10-03 19:01:42 - backend_v2 - ERROR - 查询执行失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 5 O...
+                                            ^
+
+2025-10-03 19:01:42 - backend_v2 - ERROR - 获取记录列表失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 5 O...
+                                            ^
+
+2025-10-03 19:01:42 - backend_v2 - ERROR - 获取流量列表失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 5 O...
+                                            ^
+
+2025-10-03 19:01:48 - backend_v2 - ERROR - 数据库操作失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 5 O...
+                                            ^
+
+2025-10-03 19:01:48 - backend_v2 - ERROR - 查询执行失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 5 O...
+                                            ^
+
+2025-10-03 19:01:48 - backend_v2 - ERROR - 获取记录列表失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 5 O...
+                                            ^
+
+2025-10-03 19:01:48 - backend_v2 - ERROR - 获取流量列表失败: column "timestamp" does not exist
+LINE 1: SELECT * FROM flow_records ORDER BY timestamp DESC LIMIT 5 O...
+                                            ^
+
+2025-10-03 19:02:28 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:02:28 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:28 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:28 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:02:28 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:02:28 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:02:29 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:02:31 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:02:31 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:31 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:31 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:02:31 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:02:31 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:02:31 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:02:34 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:02:35 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:35 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:35 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:02:35 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:02:35 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:02:35 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:02:44 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:02:44 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:44 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:44 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:02:44 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:02:44 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:02:44 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:02:47 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:02:48 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:48 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:48 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:02:48 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:02:48 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:02:48 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:02:50 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:02:50 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:50 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:50 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:02:50 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:02:50 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:02:50 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:02:52 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:02:53 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:53 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:53 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:02:53 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:02:53 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:02:53 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:02:56 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:02:56 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:56 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:02:56 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:02:56 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:02:56 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:02:56 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:12 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:12 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:12 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:12 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:12 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:12 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:12 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:15 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:15 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:15 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:15 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:15 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:15 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:15 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:17 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:18 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:18 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:18 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:18 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:18 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:18 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:20 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:20 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:20 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:20 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:20 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:20 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:20 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:23 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:24 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:24 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:24 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:24 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:24 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:24 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:26 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:26 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:26 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:26 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:26 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:26 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:26 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:30 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:31 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:31 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:31 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:31 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:31 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:31 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:33 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:33 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:33 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:33 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:33 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:33 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:33 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:36 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:37 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:37 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:37 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:37 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:37 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:37 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:39 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:39 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:39 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:39 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:39 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:39 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:39 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:42 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:43 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:43 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:43 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:43 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:43 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:43 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:45 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:45 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:45 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:45 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:45 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:45 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:45 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:03:54 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:03:54 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:54 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:03:54 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:03:54 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:03:54 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:03:54 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:04:01 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:04:01 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:04:01 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:04:01 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:04:01 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:04:01 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:04:01 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:04:05 - backend_v2 - INFO - 查询流量列表成功: 3 条记录
+2025-10-03 19:04:11 - backend_v2 - INFO - 从缓存获取流量列表: traffic_list:21caeb3b3ae3b465
+2025-10-03 19:04:46 - backend_v2 - INFO - 从缓存获取流量列表: traffic_list:21caeb3b3ae3b465
+2025-10-03 19:04:47 - backend_v2 - INFO - 查询流量列表成功: 10 条记录
+2025-10-03 19:04:47 - backend_v2 - INFO - 从缓存获取流量列表: traffic_list:93f24043d4ab02f9
+2025-10-03 19:05:28 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:05:28 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:05:28 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:05:28 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:05:28 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:05:28 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:05:28 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:05:51 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:05:51 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:05:51 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:05:51 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:05:51 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:05:51 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:05:51 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:05:55 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:05:56 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:05:56 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:05:56 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:05:56 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:05:56 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:05:56 - backend_v2 - INFO - 应用初始化完成 - 环境: Development
+2025-10-03 19:31:16 - backend_v2 - INFO - 应用清理完成
+2025-10-03 19:31:16 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:31:16 - backend_v2 - INFO - 数据库连接池初始化成功
+2025-10-03 19:31:16 - backend_v2 - INFO - Redis连接初始化成功
+2025-10-03 19:31:16 - backend_v2 - INFO - 缓存管理器初始化成功
+2025-10-03 19:31:16 - backend_v2 - INFO - 路由初始化成功
+2025-10-03 19:31:16 - backend_v2 - INFO - 应用初始化完成 - 环境: Development

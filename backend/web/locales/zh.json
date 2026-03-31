@@ -1,0 +1,62 @@
+{
+  "system_name": "园区网络IPv6安全风险评估系统",
+  "nav_dashboard": "仪表盘",
+  "nav_traffic": "网络流量",
+  "nav_hosts": "主机",
+  "nav_analysis": "流量分析",
+  "nav_address": "地址分析",
+  "nav_settings": "系统设置",
+  
+  "traffic_all": "所有流量",
+  "traffic_inbound": "入站流量",
+  "traffic_outbound": "出站流量",
+  "traffic_risk": "风险流量",
+  
+  "host_all": "所有主机",
+  "host_remote": "远程主机",
+  "host_risk": "风险主机",
+  
+  "country_distribution": "国家分布",
+  "as_distribution": "AS分布",
+  
+  "address_pattern": "地址模式分析",
+  
+  "common_search": "搜索",
+  "common_filter": "筛选",
+  "common_view": "查看",
+  "common_edit": "编辑",
+  "common_delete": "删除",
+  "common_add": "添加",
+  "common_save": "保存",
+  "common_cancel": "取消",
+  "common_confirm": "确认",
+  "common_back": "返回",
+  "common_next": "下一步",
+  "common_previous": "上一步",
+  "common_finish": "完成",
+  
+  "table_protocol": "协议",
+  "table_source": "源地址",
+  "table_destination": "目的地址",
+  "table_duration": "持续时间",
+  "table_bytes": "流量大小",
+  "table_packets": "数据包数",
+  "table_start_time": "开始时间",
+  "table_end_time": "结束时间",
+  "table_status": "状态",
+  "table_action": "操作",
+  
+  "error_db_connection": "数据库连接失败",
+  "error_query_failed": "查询失败",
+  "error_not_found": "未找到",
+  "error_internal": "内部错误",
+  
+  "settings_language": "语言设置",
+  "settings_language_en": "英文",
+  "settings_language_zh": "中文",
+  
+  "login": "登录",
+  "logout": "注销",
+  "username": "用户名",
+  "password": "密码"
+} 

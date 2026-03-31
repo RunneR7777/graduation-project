@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  fuxife:
+    image: fuxife
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - "8089:8089"
