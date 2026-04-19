@@ -93,13 +93,13 @@ class MCPPostgresClient:
     def __init__(self):
         self.process = None
         self.connection_string = mcp_config.postgres_connection_string
+        # 🌟 新增：异步锁，防止大模型并发调用工具时引发读写冲突
+        self._lock = asyncio.Lock() 
         
     async def start_server(self):
         """启动PostgreSQL MCP服务器"""
         try:
-            # 【猛药二】：改用 create_subprocess_shell，将参数拼成字符串
             command = f'npx -y @modelcontextprotocol/server-postgres "{self.connection_string}"'
-            
             self.process = await asyncio.create_subprocess_shell(
                 command,
                 stdout=asyncio.subprocess.PIPE,
@@ -131,20 +131,22 @@ class MCPPostgresClient:
             "params": params or {}
         }
         
-        try:
-            # 发送请求
-            request_json = json.dumps(request) + "\n"
-            self.process.stdin.write(request_json.encode())
-            await self.process.stdin.drain()
-            
-            # 读取响应
-            response_line = await self.process.stdout.readline()
-            response = json.loads(response_line.decode())
-            
-            return response
-        except Exception as e:
-            logger.error(f"发送MCP请求失败: {str(e)}")
-            return {"error": str(e)}
+        # 🌟 新增：使用异步锁包裹核心的 IO 读写逻辑
+        async with self._lock:
+            try:
+                # 发送请求
+                request_json = json.dumps(request) + "\n"
+                self.process.stdin.write(request_json.encode())
+                await self.process.stdin.drain()
+                
+                # 读取响应
+                response_line = await self.process.stdout.readline()
+                response = json.loads(response_line.decode())
+                
+                return response
+            except Exception as e:
+                logger.error(f"发送MCP请求失败: {str(e)}")
+                return {"error": str(e)}
     
     async def list_tools(self) -> List[Dict[str, Any]]:
         """获取可用的工具列表"""
@@ -177,7 +179,6 @@ class MCPPostgresClient:
             }
         })
         return response.get("result", {})
-
 
 class MCPManager:
     """MCP管理器 - 协调MCP客户端和大模型（线程安全版本）"""

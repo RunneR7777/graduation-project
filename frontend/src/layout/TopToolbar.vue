@@ -4,7 +4,7 @@
             <v-avatar tile size="55" class="ml-4 mr-3">
                 <img src="@/assets/images/fuxi_v3.svg" alt="logo"/>
             </v-avatar>
-            <span class="text-h6 grey--text text--darken-2 font-weight-bold system-title">6Guard-园区网络IPv6安全风险评估系统</span>
+            <span class="text-h6 grey--text text--darken-2 font-weight-bold system-title">校园网络IPv6流量智能分析系统</span>
         </div>
         <v-spacer />
         <div>

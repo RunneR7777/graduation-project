@@ -71,8 +71,8 @@ class HostAPI(Resource):
                     SELECT 
                         COALESCE(src_ip, dst_ip) as address,
                         COUNT(DISTINCT CASE WHEN src_ip = COALESCE(src_ip, dst_ip) THEN dst_ip ELSE src_ip END) as flows,
-                        SUM(CASE WHEN src_ip = COALESCE(src_ip, dst_ip) THEN octets ELSE reverse_octets END) as sent_bytes,
-                        SUM(CASE WHEN src_ip = COALESCE(src_ip, dst_ip) THEN reverse_octets ELSE octets END) as received_bytes,
+                        SUM(CASE WHEN src_ip = COALESCE(src_ip, dst_ip) THEN COALESCE(octets, 0) ELSE COALESCE(reverse_octets, 0) END) as sent_bytes,
+                        SUM(CASE WHEN src_ip = COALESCE(src_ip, dst_ip) THEN COALESCE(reverse_octets, 0) ELSE COALESCE(octets, 0) END) as received_bytes,
                         MAX(start_time) as last_seen
                     FROM flow_records
                     GROUP BY COALESCE(src_ip, dst_ip)

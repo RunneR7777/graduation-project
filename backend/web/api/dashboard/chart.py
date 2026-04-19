@@ -52,7 +52,7 @@ class TopHostsChartAPI(Resource):
             query = """
                 SELECT 
                     src_ip::TEXT as host_ip,
-                    SUM(octets + reverse_octets) as total_bytes
+                    SUM(COALESCE(octets, 0) + COALESCE(reverse_octets, 0)) as total_bytes
                 FROM 
                     flow_records
                 WHERE 
@@ -81,7 +81,7 @@ class TopHostsChartAPI(Resource):
             # 先计算总流量
             total_query = """
                 SELECT 
-                    SUM(octets + reverse_octets) as total_bytes
+                    SUM(COALESCE(octets, 0) + COALESCE(reverse_octets, 0)) as total_bytes
                 FROM 
                     flow_records
                 WHERE 
@@ -169,7 +169,7 @@ class TopAppsChartAPI(Resource):
             query = """
                 SELECT 
                     protocol,
-                    SUM(octets + reverse_octets) as total_bytes
+                    SUM(COALESCE(octets, 0) + COALESCE(reverse_octets, 0)) as total_bytes
                 FROM 
                     flow_records
                 WHERE 
@@ -194,7 +194,7 @@ class TopAppsChartAPI(Resource):
             # 先计算总流量
             total_query = """
                 SELECT 
-                    SUM(octets + reverse_octets) as total_bytes
+                    SUM(COALESCE(octets, 0) + COALESCE(reverse_octets, 0)) as total_bytes
                 FROM 
                     flow_records
                 WHERE 
@@ -270,7 +270,7 @@ class TrafficClassChartAPI(Resource):
                         WHEN (dst_port > 49151) THEN 'Unrated'
                         ELSE 'Unrated'
                     END as traffic_class,
-                    SUM(octets + reverse_octets) as total_bytes
+                    SUM(COALESCE(octets, 0) + COALESCE(reverse_octets, 0)) as total_bytes
                 FROM 
                     flow_records
                 WHERE 
@@ -291,7 +291,7 @@ class TrafficClassChartAPI(Resource):
             # 先计算总流量
             total_query = """
                 SELECT 
-                    SUM(octets + reverse_octets) as total_bytes
+                    SUM(COALESCE(octets, 0) + COALESCE(reverse_octets, 0)) as total_bytes
                 FROM 
                     flow_records
                 WHERE 
@@ -344,7 +344,7 @@ class TopHostsListAPI(Resource):
             
             # 首先计算所有流量的总字节数
             total_bytes_query = """
-                SELECT SUM(octets + reverse_octets) as total_bytes
+                SELECT SUM(COALESCE(octets, 0) + COALESCE(reverse_octets, 0)) as total_bytes
                 FROM flow_records
                 WHERE start_time >= NOW() - INTERVAL '1 year'
             """
@@ -357,7 +357,7 @@ class TopHostsListAPI(Resource):
                     SELECT 
                         src_ip::TEXT as host_ip,
                         COUNT(DISTINCT id) as flow_count,
-                        SUM(octets + reverse_octets) as total_bytes,
+                        SUM(COALESCE(octets, 0) + COALESCE(reverse_octets, 0)) as total_bytes,
                         CASE 
                             WHEN src_ip::TEXT LIKE '2001:da8:%' THEN 'local'
                             WHEN src_ip::TEXT LIKE '240:%' THEN 'local'
