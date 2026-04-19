@@ -9,7 +9,7 @@ import atexit
 from core.prefix.asn_service import asn_service
 from core.prefix.asn_cache_service import asn_cache_service
 
-def get_db_config(filename='/home/ui/backend/database/migrations/database.ini', section='postgresql'):
+def get_db_config(filename='database/migrations/database.ini', section='postgresql'):
     """读取数据库配置"""
     parser = ConfigParser()
     parser.read(filename)

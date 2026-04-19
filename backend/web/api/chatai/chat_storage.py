@@ -17,7 +17,7 @@ import os
 
 logger = logging.getLogger(__name__)
 
-def get_db_config(filename='/home/ui/backend/database/migrations/database.ini', section='postgresql'):
+def get_db_config(filename='/backend/database/migrations/database.ini', section='postgresql'):
     """读取数据库配置"""
     parser = ConfigParser()
     parser.read(filename)

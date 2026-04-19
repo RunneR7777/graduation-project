@@ -20,7 +20,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def config(filename='/home/ui/backend/database/migrations/database.ini', section='postgresql'):
+def config(filename='/backend/database/migrations/database.ini', section='postgresql'):
     """读取数据库配置"""
     parser = ConfigParser()
     parser.read(filename)

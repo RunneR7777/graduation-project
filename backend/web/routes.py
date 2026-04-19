@@ -11,6 +11,7 @@ from web.api.chatai.mcp_chat import MCPChatAIMessageAPI, MCPChatAIStatusAPI, MCP
 from web.api.chatai.echarts import EChartsGenerateAPI
 from web.api.chatai.chat_storage import ChatSessionAPI, ChatMessageAPI, ChatHistoryAPI, ChatCleanupAPI
 from web.api.anomaly.dataset import DatasetManagementAPI, DatasetDownloadAPI, DatasetUploadAPI
+from web.api.dashboard.report import SecurityReportAPI
 
 def init_routes(app):
     api = Api(app)
@@ -27,6 +28,7 @@ def init_routes(app):
     api.add_resource(RemoteHostAPI, '/api/remote-host')
     api.add_resource(ASDistributionAPI, '/api/as-distribution')
     api.add_resource(CountryDistributionAPI, '/api/country-distribution')
+    api.add_resource(SecurityReportAPI, '/api/report/generate')
     
     # 风险相关路由
     api.add_resource(RiskHostsAPI, '/api/risk-hosts')

@@ -1,12 +1,57 @@
 #!/usr/bin/env python3
-import pytricia
 import json
 import os
 import logging
+import ipaddress
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
+class PyTricia:
+    """纯 Python 实现的 IP 前缀匹配树，完美平替 C 语言的 pytricia"""
+    def __init__(self, *args):
+        self.root = {}
+
+    def __setitem__(self, key, value):
+        try:
+            net = ipaddress.ip_network(key, strict=False)
+            bin_str = f"{int(net.network_address):0128b}"[:net.prefixlen] if net.version == 6 else f"{int(net.network_address):032b}"[:net.prefixlen]
+            node = self.root
+            for bit in bin_str:
+                if bit not in node:
+                    node[bit] = {}
+                node = node[bit]
+            node['__value__'] = value
+            node['__prefix__'] = key
+        except Exception:
+            pass
+
+    def _search(self, ip):
+        try:
+            addr = ipaddress.ip_address(ip)
+            bin_str = f"{int(addr):0128b}" if addr.version == 6 else f"{int(addr):032b}"
+            node = self.root
+            best_val, best_pref = "Unknown", None
+            for bit in bin_str:
+                if '__value__' in node:
+                    best_val, best_pref = node['__value__'], node['__prefix__']
+                if bit not in node:
+                    break
+                node = node[bit]
+            if '__value__' in node:
+                best_val, best_pref = node['__value__'], node['__prefix__']
+            return best_val, best_pref
+        except Exception:
+            return "Unknown", None
+
+    def get(self, ip, default="Unknown"):
+        val, _ = self._search(ip)
+        return val if val != "Unknown" else default
+
+    def get_key(self, ip):
+        _, pref = self._search(ip)
+        return pref
+    
 class ASNService:
     """
     ASN信息服务类，提供IP地址对应的ASN信息查询功能
@@ -14,7 +59,7 @@ class ASNService:
     
     def __init__(self):
         self.asn_info = {}
-        self.prefix_tree = pytricia.PyTricia(128)
+        self.prefix_tree = PyTricia(128)
         self.is_initialized = False
     
     def initialize(self, asn_jsonl_path=None, prefix_file_path=None):
@@ -60,7 +105,7 @@ class ASNService:
     
     def _build_prefix_tree(self, prefix_file_path):
         """构建IP前缀到ASN的映射树"""
-        self.prefix_tree = pytricia.PyTricia(128)
+        self.prefix_tree = PyTricia(128)
         try:
             with open(prefix_file_path, "r") as f:
                 for line in f:

@@ -18,11 +18,10 @@ class MCPEChartsClient:
     async def start_server(self):
         """启动ECharts MCP服务器"""
         try:
-            # 启动MCP服务器进程
-            self.process = await asyncio.create_subprocess_exec(
-                "npx", 
-                "-y", 
-                "mcp-echarts",
+            # 【猛药一】：改用 create_subprocess_shell，让 Windows CMD 去找 npx
+            command = "npx -y mcp-echarts"
+            self.process = await asyncio.create_subprocess_shell(
+                command,
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE,
                 stdin=asyncio.subprocess.PIPE
@@ -98,12 +97,11 @@ class MCPPostgresClient:
     async def start_server(self):
         """启动PostgreSQL MCP服务器"""
         try:
-            # 启动MCP服务器进程
-            self.process = await asyncio.create_subprocess_exec(
-                "npx", 
-                "-y", 
-                "@modelcontextprotocol/server-postgres",
-                self.connection_string,
+            # 【猛药二】：改用 create_subprocess_shell，将参数拼成字符串
+            command = f'npx -y @modelcontextprotocol/server-postgres "{self.connection_string}"'
+            
+            self.process = await asyncio.create_subprocess_shell(
+                command,
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE,
                 stdin=asyncio.subprocess.PIPE
@@ -364,4 +362,4 @@ class MCPManager:
         )
 
 # 全局MCP管理器实例
-mcp_manager = MCPManager() 
+mcp_manager = MCPManager()

@@ -1,4 +1,27 @@
 <template>
+    <v-row class="mb-4">
+        <v-col class="text-right">
+            <v-btn color="error" prepend-icon="mdi-file-document" @click="generateReport" :loading="isGenerating">
+            自主生成安全分析报告 (PDF)
+            </v-btn>
+        </v-col>
+        </v-row>
+
+        <v-dialog v-model="showReportDialog" max-width="900px">
+        <v-card>
+            <v-card-title class="bg-primary text-white">
+            校园网络 IPv6 流量智能安全分析报告
+            </v-card-title>
+            <v-card-text class="pa-6" style="min-height: 400px;">
+            <div v-html="formattedReport" style="line-height: 1.8; font-size: 16px;"></div>
+            </v-card-text>
+            <v-card-actions class="pa-4">
+            <v-spacer></v-spacer>
+            <v-btn color="grey" variant="text" @click="showReportDialog = false">关闭</v-btn>
+            <v-btn color="success" prepend-icon="mdi-printer" @click="exportPDF">直接打印/导出PDF</v-btn>
+            </v-card-actions>
+        </v-card>
+        </v-dialog>
     <div class="ml-4">
         <v-card-title>
             <v-list-item-action>
@@ -466,6 +489,7 @@
 </template>
 
 <script setup lang="ts">
+import { marked } from 'marked';
 import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { useDashboardStore } from '@/stores/dashboard'
@@ -490,6 +514,71 @@ echarts.use([
 
 const router = useRouter()
 const dashboardStore = useDashboardStore()
+
+const isGenerating = ref(false);
+const showReportDialog = ref(false);
+const reportText = ref('');
+
+// 将 Markdown 转换为 HTML
+const formattedReport = computed(() => {
+  return marked(reportText.value);
+});
+
+// 点击生成报告按钮
+const generateReport = async () => {
+  isGenerating.value = true;
+  try {
+    // 使用浏览器原生的 fetch 发送请求，绝对不会报错
+    const response = await fetch('/api/report/generate');
+    const res = await response.json();
+    
+    // 适配后端 Response.success 返回的格式 { status: { code: 200 }, data: { report: '...' } }
+    if (res.status && res.status.code === 200) {
+      reportText.value = res.data.report;
+      showReportDialog.value = true;
+    } else {
+      alert('生成失败: ' + (res.status?.message || '未知错误'));
+    }
+  } catch (error) {
+    console.error("生成报告出错:", error);
+    alert('网络错误，无法连接到大模型接口');
+  } finally {
+    isGenerating.value = false;
+  }
+};
+
+// 导出为 PDF 功能 
+const exportPDF = () => {
+  const printWindow = window.open('', '_blank');
+  
+  // 加上判空处理：如果浏览器拦截了弹窗，printWindow 就会是 null
+  if (!printWindow) {
+    alert('无法打开打印预览窗口，请检查浏览器是否拦截了弹出窗口！');
+    return;
+  }
+
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>校园网络 IPv6 安全分析报告</title>
+        <style>
+          body { font-family: 'Microsoft YaHei', sans-serif; padding: 40px; color: #333; line-height: 1.6; }
+          h1, h2, h3 { color: #1976d2; }
+          table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+          th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+          th { background-color: #f2f2f2; }
+        </style>
+      </head>
+      <body>
+        ${formattedReport.value}
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
+  // 触发浏览器的打印弹窗
+  setTimeout(() => { printWindow.print(); }, 500); 
+};
+
 
 // 响应式数据
 const showTrendDialog = ref(false)
